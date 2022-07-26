@@ -5,9 +5,10 @@ import './App.css';
 import Search from '../search/Search';
 import Login from '../login/Login';
 import Music from '../music/Music';
-import Playlist from '../playlist/Playlist';
+import Authentication from '../authentication/Authentication';
 import Home from '../home/Home';
-import Signup from '../signup/Signup';
+
+
 
 function App() {
   return (
@@ -15,13 +16,11 @@ function App() {
       <Router>
         <Navbar />
         <Routes>
-          <Route exact path="/" element={<home/>}></Route>
-          <Route exact path="/search" element={<search/>}></Route>
-          <Route exact path="/music" element={<music/>}></Route>
-          <Route exact path="/Login" element={<login/>}></Route>
-          <Route exact path="/signup" element={<signup/>}></Route>
-          <Route exact path="/playlist" element={<playlist/>}></Route>
-
+          <Route exact path="/search" element={<Search/>}></Route>
+          <Route exact path="/music" element={<Music/>}></Route>
+          <Route exact path="/Login" element={<Login/>}></Route>
+          <Route exact path="/Signup" element={<Authentication/>}></Route>
+          <Route exact path="/" element={<Home />} />  
           </Routes>     
      </Router>
     </div>
