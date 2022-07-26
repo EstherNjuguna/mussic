@@ -2,7 +2,7 @@ import React from 'react';
 import Navbar from '../navbar/Navbar';
 import './App.css';
 import Search from '../search/Search';
-import Dropdown from '../dropdown/Dropdown';
+import Music from '../music/Music';
 import {BrowserRouter as Router,Routes,Route} from "react-router-dom"
 function App() {
   return (
@@ -10,9 +10,9 @@ function App() {
       <Router>
         <Navbar />
         <Routes>
-          <Route exact path="/" element={<Home/>}></Route>
-          <Route exact path="/search" element={<Search/>}></Route>
-          <Route exact path="/dropdown" element={<Dropdown/>}></Route>
+          <Route exact path="/" element={<home/>}></Route>
+          <Route exact path="/search" element={<search/>}></Route>
+          <Route exact path="/music" element={<music/>}></Route>
           </Routes>     
      </Router>
     </div>
