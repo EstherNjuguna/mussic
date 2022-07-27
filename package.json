@@ -1,7 +1,7 @@
 {
+  "homepage": "https://EstherNjuguna.github.io/mussic",
   "name": "mussic",
   "version": "0.1.0",
-  "homepage": "https://myusername.github.io/my-app",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
@@ -18,7 +18,7 @@
   "scripts": {
     "start": "react-scripts start",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -b master -d build",
+    "deploy": "gh-pages -d build",
     "build:staging": "env-cmd -f .env.staging npm run build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
