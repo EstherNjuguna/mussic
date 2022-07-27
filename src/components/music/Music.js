@@ -1,36 +1,30 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
+import ListItem from '../listitem/ListItem';
 
+export default function Music(){
+    const [songs, setSongs] = useState([])
 
-function Music() {
+    useEffect(() => {
+        fetch("https://musicbrainz.org/ws/2/")
+        .then(response => response.json())
+        .then((songs) => {
+            setSongs(songs)
+        
+        })
+      }, [])
 
-  // set initial events before fetch
-  const [album, setAlbum] = useState([]);
+      let mySongs = songs.map((song) => (<ListItem
+        songTitle={song.title} 
+        songThumbnail={song.thumbnail} 
+        key={song.id} />))
 
-  
-  useEffect(() => {
-    fetch("https://musicbrainz.org/ws/2/")
-    .then(res => res.json())
-    .then(data => {
-      setAlbum(data)
-    })
-  }, [])
-
-  
-  const displayMusic = album.map((song, index) => {
-    return <div key={index} className="show-details">
-        <img src={song.image} alt="album Images"/>
-        <p>{song.genre}</p>
-        <p>{song.rating}</p>
-        <p>{song.album}</p>
-    </div>
-  })
-
-
-  return (
-    <div className="Albums">
-      {displayMusic}
-    </div>
-  );
+    return(
+      <div class="text-bg-info p-3">
+        <div className='container'>My Songs
+          <div className='row'>
+            {mySongs}
+          </div>
+        </div>
+        </div>
+    )
 }
-
-export default Music;

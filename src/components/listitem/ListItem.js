@@ -1,17 +1,41 @@
+import React, {useEffect, useState} from 'react';
 
+ function ListItem(){
+    const[artist, setArtist] = useState("")
+    const[title, setTitle] = useState("")
+    const[genre, setGenre] = useState("")
+    const[instrument, setInstrument] = useState("")
+    const[song_url, setSongUrl] = useState("")
+    const[work, setWork] = useState("")
+    useEffect(() => {
+        fetch("https://musicbrainz.org/ws/2/")
+        .then(response => response.json())
+        .then((songs) => {
+           
+            songs.map((song) => {
+                return setArtist(song.artist), setSongUrl(song.song_url), setWork(song.work), setTitle(song.title), 
+                setGenre(song.genre), setInstrument(song.instrument);
+            })
+        })
+      }, [])
+    
+return(
+        <div class="text-bg-info p-3">
+        <div className='container'>
 
-import { Link } from "react-router-dom";
-
-const ListItem = ({ image, genre, rating, album }) => {
-  return (
-    <Link to={`/singleshow/${id}`} className="listitem">
-      <img src={image} alt={text} />
-      <div className="listitem__info">
-        <h4 className="info__name">{}</h4>
-        <h4 className="info__rating">{rating}</h4>
-      </div>
-    </Link>
-  );
-};
-
+        <center>
+        <div className='card' style={{width : 25 + 'rem'}}>
+        
+            <h5>Song:{title}</h5>
+            <h5> Work:{work}</h5>
+            <p>music link:{song_url}</p>
+            <h6 className='badge bg-info'>Music genre:{genre}</h6>
+            <p>Instruments:{instrument}</p>
+        </div>
+        </center>
+        <br></br>
+        </div>
+    </div>
+)
+}
 export default ListItem;
