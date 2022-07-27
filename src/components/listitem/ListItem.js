@@ -8,7 +8,7 @@ import React, {useEffect, useState} from 'react';
     const[song_url, setSongUrl] = useState("")
     const[work, setWork] = useState("")
     useEffect(() => {
-        fetch("https://api.musixmatch.com/ws/1.1/")
+        fetch("http://api.napster.com/v2.2/albums/new?apikey=YTkxZTRhNzAtODdlNy00ZjMzLTg0MWItOTc0NmZmNjU4Yzk4")
         .then(response => response.json())
         .then((songs) => {
            

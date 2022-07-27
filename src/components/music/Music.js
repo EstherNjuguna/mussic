@@ -5,10 +5,10 @@ export default function Music(){
     const [songs, setSongs] = useState([])
 
     useEffect(() => {
-        fetch("https://api.musixmatch.com/ws/1.1/")
+        fetch("http://api.napster.com/v2.2/tracks/top?apikey=YTkxZTRhNzAtODdlNy00ZjMzLTg0MWItOTc0NmZmNjU4Yzk4")
         .then(response => response.json())
         .then((songs) => {
-            setSongs(songs)
+          setSongs(songs)
         
         })
       }, [])

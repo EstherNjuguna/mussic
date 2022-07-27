@@ -1,7 +1,7 @@
 {
   "name": "mussic",
   "version": "0.1.0",
-  "homepage": "https://esthernjuguna.github.io/mussic/",
+  "homepage": "https://EstherNjuguna.github.io/mussic",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
