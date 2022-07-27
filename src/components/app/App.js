@@ -7,6 +7,7 @@ import Login from '../login/Login';
 import Music from '../music/Music';
 import Authentication from '../authentication/Authentication';
 import Home from '../home/Home';
+import Dropdown from '../dropDown/Dropdown';
 
 
 
@@ -20,6 +21,7 @@ function App() {
           <Route exact path="/music" element={<Music/>}></Route>
           <Route exact path="/Login" element={<Login/>}></Route>
           <Route exact path="/Signup" element={<Authentication/>}></Route>
+          <Route exact path="/Dropdown" element={<Dropdown/>}></Route>
           <Route exact path="/" element={<Home />} />  
           </Routes>     
      </Router>
