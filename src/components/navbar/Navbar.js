@@ -32,9 +32,7 @@ const Navbar = () => {
 <li className="nav-item">
 <Link className="nav-link"to="/Signup">Signup</Link>
 </li>
-<li className="nav-item">
-   <Link to="/about" className="nav-link">About</Link>
-   </li>
+
   </ul>
   <form className="d-flex" role="search">
    <input className="form-control me-2" type="search" placeholder="Maroon 5" aria-label="Search"/>

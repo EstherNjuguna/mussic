@@ -1,5 +1,5 @@
-import { Dropdown } from 'bootstrap';
 import React from 'react'
+import {dropdown} from 'bootstrap'
 
 const DropDown= () => {
   return (
@@ -8,7 +8,7 @@ const DropDown= () => {
     Dropdown button
   </button>
   <ul class="dropdown-menu">
-    <li><a class="dropdown-item" href="{}">Country-Music</a></li>
+    <li><a class="dropdown-item" href="#">Country-Music</a></li>
     <li><a class="dropdown-item" href="#">RnB</a></li>
     <li><a class="dropdown-item" href="#">Hiphop</a></li>
   </ul>
