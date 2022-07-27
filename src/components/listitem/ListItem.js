@@ -8,7 +8,7 @@ import React, {useEffect, useState} from 'react';
     const[song_url, setSongUrl] = useState("")
     const[work, setWork] = useState("")
     useEffect(() => {
-        fetch("https://musicbrainz.org/ws/2/")
+        fetch("https://api.musixmatch.com/ws/1.1/")
         .then(response => response.json())
         .then((songs) => {
            

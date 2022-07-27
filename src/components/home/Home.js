@@ -10,7 +10,7 @@ const Home = () => {
       <i className = "fas fa-times"></i>
     </span>
     
-    <h1>Welcome to mussic</h1>
+    <h1 class="fw-bolder">Welcome to mussic</h1>
     <MusicIcon/>
     
     </section>

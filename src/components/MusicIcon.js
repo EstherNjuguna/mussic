@@ -3,5 +3,5 @@ import pic from '../images/music.jpeg'
 
 
 export default function MusicIcon(){
- return <img src={pic} alt="music-icon" style={{width : 65 + 'rem'}}/>
+ return <img src={pic} alt="music-icon" style={{width : 100+ 'rem'}}/>
 }
