@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/mussic/static/css/main.073c9b0a.css",
+    "main.js": "/mussic/static/js/main.d9265519.js",
+    "static/media/music.jpeg": "/mussic/static/media/music.c31fc86d8f49b8a8890d.jpeg",
+    "index.html": "/mussic/index.html",
+    "main.073c9b0a.css.map": "/mussic/static/css/main.073c9b0a.css.map",
+    "main.d9265519.js.map": "/mussic/static/js/main.d9265519.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.d9265519.js"
+  ]
+}
