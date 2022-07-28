@@ -8,48 +8,48 @@ import Music from '../music/Music';
 import Player from '../music/Player';
 import Sidebar from '../sidebar/Sidebar';
 import Login from '../login/Login';
-//import { setClientToken } from '../../spotify';
+import { setClientToken } from '../../spotify';
 
 
 function Home() { 
 
-    //const [token, setToken] = useState("");
+    const [token, setToken] = useState("");
   
-    //useEffect(() => {
-      //const token = window.localStorage.getItem("token");
-     // const hash = window.location.hash;
-     // window.location.hash = "";
-      //if (!token && hash) {
-      //  const _token = hash.split("&")[0].split("=")[1];
-        //window.localStorage.setItem("token", _token);
-       // setToken(_token);
-       // setClientToken(_token);
-    //  } else {
-      //  setToken(token);
-      //  setClientToken(token);
-    //  }
-   // }, []);
+    useEffect(() => {
+      const token = window.localStorage.getItem("token");
+     const hash = window.location.hash;
+     window.location.hash = "";
+      if (!token && hash) {
+       const _token = hash.split("&")[0].split("=")[1];
+        window.localStorage.setItem("token", _token);
+       setToken(_token);
+       setClientToken(_token);
+     } else {
+        setToken(token);
+        setClientToken(token);
+     }
+    }, []);
   
 
   //return !token ?(
-//<Login />) : 
-    <div className="App" class="p-3 mb-2 bg-secondary text-white">
+<Login />//) : 
+    //<div className="App" class="p-3 mb-2 bg-secondary text-white">
       
-      <Router>
-        <Navbar />
-        <Sidebar />
-        <Login />
+    //  <Router>
+      //  <Navbar />
+       // <Sidebar />
+      //  <Login />
        
-        <Routes>
-          <Route exact path="/" element={<Library/>}></Route>
-          <Route exact path="/Favourite" element={<Favourite/>}></Route>
-          <Route exact path="/Feed" element={<Feed/>}></Route>
-          <Route exact path="/Music" element={<Music/>}></Route>
-          <Route exact path="/Player" element={<Player/>}></Route>
+       // <Routes>
+         // <Route exact path="/" element={<Library/>}></Route>
+        //  <Route exact path="/Favourite" element={<Favourite/>}></Route>
+         // <Route exact path="/Feed" element={<Feed/>}></Route>
+         // <Route exact path="/Music" element={<Music/>}></Route>
+        //  <Route exact path="/Player" element={<Player/>}></Route>
           
-          </Routes>     
-     </Router>
-    </div>
+        //  </Routes>     
+    // </Router>
+    //</div>
   
   
   

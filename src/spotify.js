@@ -1,16 +1,22 @@
-import React from 'react'
+import axios from "axios";
 
-const spotify = () => {
-const client_id= "69506e6ee34d48968927805d9bea7bbe"
-const redirect_uri="http://localhost:3000"
-const AUTH_ENDPOINT="https://accounts.spotify.com/authorize"
-  const response_type="token"
-return (
-    <div>
- <a href={`${AUTH_ENDPOINT}?client_id=${client_id}&redirect_uri=${redirect_uri}&response_type=${response_type}`}>Login
-                        to Spotify</a>
-    </div>
-  )
-}
+const authEndpoint = "https://accounts.spotify.com/authorize";
+const clientId = "69506e6ee34d48968927805d9bea7bbe";
+const redirectUri = "http://localhost:3000";
+const scopes = ["user-library-read", "playlist-read-private",];
 
-export default spotify
+export const loginEndpoint = `${authEndpoint}client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes.join(
+    "%20"
+  )}&response_type=token&show_dialog=true`;
+const apiClient = axios.create({
+  baseURL: "https://api.spotify.com/search/",
+});
+
+export const setClientToken = (token) => {
+  apiClient.interceptors.request.use(async function (config) {
+    config.headers.Authorization = "Bearer " + token;
+    return config;
+  });
+};
+
+export default apiClient;
