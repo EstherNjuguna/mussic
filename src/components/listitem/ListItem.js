@@ -1,20 +1,20 @@
 import React, {useEffect, useState} from 'react';
 
  function ListItem(){
-    const[artist, setArtist] = useState("")
-    const[title, setTitle] = useState("")
+    const[primaryArtist, setPrimaryArtist] = useState("")
+    const[track, setTrack] = useState("")
     const[genre, setGenre] = useState("")
-    const[instrument, setInstrument] = useState("")
+    const[image, setImage] = useState("")
     const[song_url, setSongUrl] = useState("")
-    const[work, setWork] = useState("")
+    
     useEffect(() => {
         fetch("http://api.napster.com/v2.2/albums/new?apikey=YTkxZTRhNzAtODdlNy00ZjMzLTg0MWItOTc0NmZmNjU4Yzk4")
         .then(response => response.json())
-        .then((songs) => {
+        .then((tracks) => {
            
-            songs.map((song) => {
-                return setArtist(song.artist), setSongUrl(song.song_url), setWork(song.work), setTitle(song.title), 
-                setGenre(song.genre), setInstrument(song.instrument);
+            tracks.map((track) => {
+                return setPrimaryArtist(track.primaryArtist), setSongUrl(track.song_url), setTrack(track.track), 
+                setGenre(track.genre), setImage(track.image);
             })
         })
       }, [])
@@ -26,16 +26,16 @@ return(
         <center>
         <div className='card' style={{width : 25 + 'rem'}}>
         
-            <h5>Song:{title}</h5>
-            <h5> Work:{work}</h5>
+            <h5>Song:{track}</h5>
+            <h5> image:{image}</h5>
             <p>music link:{song_url}</p>
             <h6 className='badge bg-info'>Music genre:{genre}</h6>
-            <p>Instruments:{instrument}</p>
+            <p>genre:{genre}</p>
         </div>
         </center>
         <br></br>
         </div>
-    </div>
+        </div>
 )
-}
-export default ListItem;
+ }
+ export default ListItem;

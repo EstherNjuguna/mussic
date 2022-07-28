@@ -1,31 +1,43 @@
-import React from 'react';
-import {BrowserRouter as Router,Routes,Route} from "react-router-dom"
-import Navbar from '../navbar/Navbar';
-import './App.css';
-import Search from '../search/Search';
-import Login from '../login/Login';
+//import React,{ useEffect, useState} from 'react';
+//import {BrowserRouter as Router,Routes,Route} from "react-router-dom"
+//import Navbar from '../navbar/Navbar';
+//import Favourite from '../music/Favourite';
+import Library from '../music/Library';
+//import Feed from '../music/Feed';
 import Music from '../music/Music';
-import Authentication from '../authentication/Authentication';
-import Home from '../home/Home';
-import Dropdown from '../dropDown/Dropdown';
-
-
+import Player from '../music/Player';
+//import Sidebar from '../sidebar/Sidebar';
+//import Login from '../login/Login';
+import React from 'react'
 
 function App() {
-  return (
-    <div className="App">
-      <Router>
-        <Navbar />
-        <Routes>
-          <Route exact path="/search" element={<Search/>}></Route>
-          <Route exact path="/music" element={<Music/>}></Route>
-          <Route exact path="/Login" element={<Login/>}></Route>
-          <Route exact path="/Signup" element={<Authentication/>}></Route>
-          <Route exact path="/Dropdown" element={<Dropdown/>}></Route>
-          <Route exact path="/" element={<Home />} />  
-          </Routes>     
-     </Router>
+ // const [token,setToken]= useState("");
+  //useEffect(() => {
+   // const hash=window.location.hash;
+    //console.log(hash)
+ // },[])
+  return(
+    <div>
+      <Library />
+      <Music />
+      <Player />
+
     </div>
+   // <div className="App" class="p-3 mb-2 bg-primary text-white">
+     // <Router>
+       // <Navbar />
+        //<Sidebar />
+        //<Login />
+        //<Routes>
+          //<Route exact path="/" element={<Library/>}></Route>
+         // <Route exact path="/Favourite" element={<Favourite/>}></Route>
+          //<Route exact path="/Feed" element={<Feed/>}></Route>
+         // <Route exact path="/Music" element={<Music/>}></Route>
+          //<Route exact path="/Player" element={<Player/>}></Route>
+          
+         // </Routes>     
+    // </Router>
+    
   );
   
   

@@ -1,18 +1,17 @@
 import React from 'react'
+import { loginEndpoint } from '../../spotify'
 
 const Login = () => {
-  return (
-    <span class="badge text-bg-info">Info
-    <form type="submit" className="login-form">
-      <h2 id="h2">Login</h2>
-      <input type="email" name="email" placeholder="Email" required />
-      <input type="password" name="password" placeholder="Password" required />
-      <button type="submit">Login</button>
-      <p>Don't have an account?<button id="account-btn">SignUp</button></p>
-    </form>
-    
-</span>
-  )
+  //return (
+    //<div>
+     // <img class="rounded-circle" src="https://www.kindpng.com/picc/m/496-4961762_spotify-connect-logo-png-transparent-png.png"
+     // alt="logo"
+      //className='login'/>
+     // <a href={loginEndpoint}>
+       // <div className="login-btn">Log in</div>
+     // </a>
+   //</div>
+ // );
 }
 
-export default Login;
+export default Login
