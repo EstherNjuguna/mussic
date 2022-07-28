@@ -1,30 +1,29 @@
 import React,{ useEffect, useState} from 'react';
+import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
 import Navbar from '../navbar/Navbar'
-import Favourite from '../music/Favourite';
 import Library from '../music/Library';
-import Feed from '../music/Feed';
 import Music from '../music/Music';
-import Player from '../music/Player';
-import Sidebar from '../sidebar/Sidebar';
 import Login from '../login/Login';
-
+import Home from '../home/Home';
+import { Provider } from '../context';
 
 function App() {
- const [token,setToken]= useState("");
-  useEffect(() => {
-   const hash=window.location.hash;
-    console.log(hash)
- },[])
-  return(
-    <div>
-      <Library />
-      <Music />
-      <Player />
-      <Login />
-      <Navbar />
 
-    </div>
-  )
+
+  <Router>
+    <>
+      <Navbar />
+      <Library />
+      <div className="container">
+      
+        <Route exact path="/" component={Home}/>
+    
+      </div>
+      </>
+  
+    </Router>
+
+  
   
 }
 
